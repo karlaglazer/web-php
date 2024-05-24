@@ -114,7 +114,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
-    $secret_key = '6LffWjkiAAAAAHLJW9hRJ9gVDvjySrYOz6PdaMVw';
+    $secret_key = '*';
     $url = 'https://www.google.com/recaptcha/api/siteverify?secret='
             . $secret_key . '&response=' . $recaptcha;
     $response = file_get_contents($url);
