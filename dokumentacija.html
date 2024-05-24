@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="hr">
+    <head>
+        <title>Dokumentacija</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Karla Glazer">
+        <meta name="keywords" content="nekretnine">
+        <meta name="description" content="22.5.2023.">
+        <!--<script src="https://www.google.com/recaptcha/enterprise.js?render=6Lepw04mAAAAACtKm_gGtA6ZR2K9-9qbzepta8fw"></script>-->
+        <script src="https://www.google.com/recaptcha/api.js"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+        <link rel="stylesheet" href="css/kglazer.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <script  type="text/javascript" src="js/kglazer.js"></script>
+    </head>
+    <body>
+        <nav class="navigation">
+            <ul>
+                <li><a href="index.php">Početna</a></li>
+            </ul>
+        </nav>
+        <section>
+            <div>
+                <h2>
+                    Projektni zadatak:
+                </h2>
+                <p>
+                    Projektni zadatak bio je kreirati sustav za upravljanje nekretninama. Svaki korisnik koji pristupi sustavu mora prihvatiti uvjete korištenja.
+                </p>
+                <p>
+                    Neregistrirani korisnik<br>
+                    Vidi popis iznajmljenih nekretnina grupirano po moderatorima uz mogućnost filtriranja
+                    iznajmljenih nekretnina po datumu početka najma na način da definira vremensko razdoblje
+                    (od-do).<br>
+                    Vidi popis slobodnih nekretnina uz mogućnost sortiranja po cijeni može filtrirati po opisu
+                    nekretnine.
+                </p>
+                <p>
+                    Registrirani korisnik / Stanar<br>
+                    Kreira/Pregledava ugovor o najmu tako da odabire nekretninu koja ima status “slobodan” i
+                    unosi svoju sliku. Jedan korisnik može unajmiti više nekretnina u istom trenutku.<br>
+                    Vidi popis svojih nekretnina koje je unajmio (status “unajmljen”) uz mogućnost raskida
+                    ugovora o najmu. Ne može raskinuti ugovor sve dok ne plati sve troškove pričuve i najam.
+                    Uspješnim raskidanjem najma nekretnina dobiva status “slobodan”.<br>
+                    Vidi popis svojih troškova najma i pričuva po mjesecima te iste može označiti da su plaćeni.
+                    Može platiti samo one pričuve koje su u prošlosti u odnosu na trenutni datum.<br>
+                    Može prijaviti nedostatke unajmljene nekretnine tako da navodi razlog i odabere važnost
+                    (“nisko”, “srednje”, “visoko”).
+                </p>
+                <p>
+                    Moderator / Upravitelj nekretnine<br>
+                    Kreira/Pregledava/Ažurira mjesečnu pričuvu (npr. za 12.2023) i definira cijenu (npr. 30 EUR)
+                    za nekretnine za koje je zadužen.<br>
+                    Vidi popis nedostataka po nekretninama i može ih označiti kao riješene ili unijeti da se neće
+                    razriješiti uz opis razloga.<br>
+                    Vidi statistiku broja plaćenih i neplaćenih pričuva po stanaru.
+                </p>
+                <p>
+                    Administrator / Investitor<br>
+                    Kreira/Pregledava/Ažurira nekretninu (npr. zgrada, kuća, stan, …) i dodjeljuje moderatore
+                    nekretninama. Kod kreiranje nekretnine unosi opis (dvosoban stan - 50m2 na 2.katu, …), sliku
+                    nekretnine, ukupnu cijenu najma i status nekretnine (“unajmljen”, “slobodan”). Automatski se
+                    status nekretnine prilikom kreiranja postavlja u „slobodan“.<br>
+                    Vidi ugovore o najmu te iste potvrđuje/odbija. Prilikom potvrđivanja ugovora se status
+                    nekretnine se mijenja u „unajmljen“ uz definiranje datuma početka najma.
+                </p>
+            </div>
+            <div>
+                <h2>
+                    Projektno rješenje:
+                </h2>
+                <p>
+                    Projektni zadatak bio je kreirati sustav za upravljanje nekretninama. Svaki korisnik koji pristupi sustavu mora prihvatiti uvjete korištenja.
+                </p>
+                <p>
+                    Sustav neregistriranim korisnicima omogućuje pregled iznajmljenih i slobodnih nekretnina uz mogućnost filtriranja. Iznajmljene nekretnine se mogu filtrirati po 
+                    datumu početka najma, a slobodne nekretnine po opisu te se slobodne još mogu sortirati po cijeni najma. Korisnik se smatra neregistriranim sve dok se ne prijavi ili registrira.
+                    Prilikom registracije korisnik mora unijeti tražene podatke u točnim formatima, posebno je važno da unese točan e-mail jer se aktivacijski kod šalje na uneseni e-mail i traje 
+                    10 sati. 
+                </p>
+                <p>
+                    Prijavljeni korisnik može imati jednu od tri uloge (po važnosti): stanar, upravitelj ili investitor.
+                    Svaka uloga ima sve mogućnosti kao uloge nižeg ranga.
+                </p>
+                <p>
+                    Stanar može iznajmiti nekretninu. Kada mu se odobri zatražena nekretnina dobiva dodatne dvije mogućnosti. Ako je podmirio sva dugovanja za nekretninu može 
+                    raskinuti ugovor. Druga mogućnost je prijava nedostatka nekretnine, prilikom prijave mora unijeti opis nedostatka i odabrati važnost. Na posebnoj stranici vidi popis troškova sa statusom plaćeno. Stanar može platiti samo 
+                    pričuve i najam u periodu iznajmljivanja.
+                </p>
+                <p>
+                    Upravitelj nekretnine na popisu nekretnina kojima upravlja, za svaku nekretninu, vidi popis pričuva koje je kreirao uz mogućnost izmjene odnosno uređivanja istih. 
+                    Također za svaku nekretninu vidi popis prijavljenih nedostataka koje može riješiti ili odbiti uz razlog odbijanja.
+                </p>
+                <p>
+                    Investitor ima mogućnost blokiranja/aktiviranja korisnika. Korisnik sa ovom ulogom određuje hoće li ugovor o najmu biti prihvaćen ili odbijen. Ukoliko je ugovor 
+                    prihvaćen moguće je odmah kreirati zaduženje za najam za trenutni mjesec. Odabirom dnevnika rada, investitor može vidjeti sve bitne radnje koje su se dogodile u sustavu.
+                </p>
+                <p>
+                    Svaki korisnik može pristupiti popisu korisnika samo ako zna podatke za prijavu.
+                </p>
+            </div>
+            <div>
+                <h2>
+                    Era:
+                </h2>
+                <img src="dokumenti/ERA.png" alt="ERA"/>
+            </div>
+            <div>
+                <h2>
+                    Skripte: 
+                </h2>
+                <ul>
+                    <li>
+                        <b>registracija.php</b><br>
+                        &nbsp;skripta provjerava ispravnost unesenih podataka, ukoliko neki od podataka ne odgovara uvjetima koji su postavljeni korisnik se ne može registrirati sve dok 
+                        ne popuni ispravno podatke, nakon uspješne registracije generira se aktivacijski kod koji se sprema u bazu, korisniku se na mail šalje aktivacijski link 
+                        koji se generira u skripti, aktivacijski link traje 10 sati od trenutka reegistracije
+                    </li>
+                    <li>
+                        <b>prijava.php</b><br>
+                        &nbsp;u ovoj skripti se provjerava je li korisnik unio ispravno korisničko ime sa pripadajućom lozinkom, 
+                        korisnik se može prijaviti ako nije blokiran, u slučaju da korisnik 5 puta zaredom unese krivu lozinku sustav ga blokira (administrator ga može ponovno
+                        aktivirati), ispravnom prijavom broj neuspjelih prijava ponovno se postavlja na 0
+                    </li>
+                    <li>
+                        <b>popis.php</b><br>
+                        &nbsp;svim korisnicima se prikazuje popis slobodnih nekretnina i iznajmljenih nekretnina, skripta ima mogućnost filtriranja i sortiranja popisa, 
+                        ako je uloga prijavljenog korisnika administrator, otvaraju se mogućnosti za kreiranje nove nekretnine ili uređivanje već postojeće nekretnine
+                    </li>
+                    <li>
+                        <b>ugovori.php</b><br>
+                        &nbsp;skripta administratoru omogućava prikaz svih ugovora u sustavu, ugovor o najmu se može odobriti ili odbiti, ukoliko se ugovor odobri, nekretnina postaje 
+                        iznajmljena i otvara se mogućnost kreiranja zaduženja za najam za trenutni mjesec
+                    </li>
+                    <li>
+                        <b>popis_troskova.php</b><br>
+                        &nbsp;svakom uspješno prijavljenom korisniku prikazuju se pričuve i najamnine za sve nekretnine koje je iznajmio, korisnik može platiti svako zaduženje
+                    </li>
+                    <li>
+                        <b>popis_pricuva.php</b><br>
+                        &nbsp;omogućava kreiranje, ažuriranje i pregled pričuva svake nekretnine za koju je administrator zadužen, ispod pričuva prikazuje se 
+                        popis prijavljenih nedostataka koje moderator može riješiti ili odbiti uz odgovarajući razlog odbijanja
+                    </li>
+                    <li>
+                        <b>popis_korisnika.php</b><br>
+                        &nbsp;administratoru prikazuje popis svih korisnika uz mogućnost blokiranja/aktiviranja svakog korisnika
+                    </li>
+                    <li>
+                        <b>nekretnina.php</b><br>
+                        &nbsp;skripta služi za prikaz iznajmljene nekretnine uz mogućnost raskida ugovora o najmu (provjerava se jesu li sva zaduženja plaćena) i mogućnost 
+                        prijave nedostatka nekretnine uz opis nedostatka i odabir važnosti
+                    </li>
+                    <li>
+                        <b>najam.php</b><br>
+                        &nbsp;dohvaća sve slobodne nekretnine koje korisnik može iznajmiti, prijavljeni korisnik može rezervirati nekretnine, vidjeti svoje već kreirane ugovore 
+                        koji imaju odgovarajući status i vidjeti svoje iznajmljene nekretnine
+                    </li>
+                    <li>
+                        <b>index.php</b><br>
+                        &nbsp;ne dopušta korištenje sustava ako korisnik nije prihvatio uvjete korištenja, 
+                        ako su uvjeti prihvaćeni sve funkcionalnosti za neregistriranog korisnika se otključavaju
+                    </li>
+                    <li>
+                        <b>dnevnik.php</b><br>
+                        &nbsp;čita podatke iz dnevnik.log dokumenta koji se popunjava putem dnevnik.class.php skripte 
+                    </li>
+                    <li>
+                        <b>aktivacija.php</b><br>
+                        &nbsp;skripta služi za aktivaciju korisnika putem aktivacijskog linka generiranog u e-mailu, provjerava se je li aktivacijski kod još uvijek vrijedi i 
+                        ako je zadovoljen uvjet korisniku se status postavlja na aktivan
+                    </li>
+                    <li>
+                        <b>XML.php</b><br>
+                        &nbsp;kreira XML dokument za dohvaćanje korisničkog imena putem AJAX-a
+                    </li>
+                    <li>
+                        <b>korisnici.php</b><br>
+                        &nbsp;služi za dohvaćanje popisa korisnika koji je zaključan pripadajućim korisničkim imenom i lozinkom
+                    </li>
+                    <li>
+                        <b>funkcije.php</b><br>
+                        &nbsp;skripta ima funkciju za odjavu korisnika, generiranje nove lozinke i generiranje dinamičke soli za SHA256 lozinku
+                    </li>
+                    <li>
+                        <b>sesija.class.php</b><br>
+                        &nbsp;preuzeta sa ELF-a
+                    </li>
+                    <li>
+                        <b>baza.class.php</b><br>
+                        &nbsp;preuzeta sa ELF-a
+                    </li>
+                    <li>
+                        <b>dnevnik.class.php</b><br>
+                        &nbsp;preuzeta sa ELF-a
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h2>
+                    Navigacijski dijagram: 
+                </h2>
+                <img src="dokumenti/navigacijski.png" alt="navigacijski"/>
+            </div>
+            <div>
+                <h2>
+                    Korištene tehnologije: 
+                </h2>
+                <ul>
+                    <li>
+                        <b>draw.io</b> - za kreiranje navigacijskog dijagrama
+                    </li>
+                    <li>
+                        <b>dbdiagram.io</b> - za kreiranje ERA dijagrama
+                    </li>
+                    <li>
+                        <b>phpmyadmin</b> - za kreiranje baze
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h2>
+                    Vanjske biblioteke:
+                </h2>
+                <ul>
+                    <li>
+                        <b>recaptcha</b> - korišteno gotovo rješenje za spriječavanje automata, implementirana prilikom registracije 
+                    </li>
+                    <li>
+                        <b>smarty</b> - za svaku skriptu koja se prikazuje korisniku kreiran je template, sve varijable assignaju se smarty-u i ne miješa se php sa html-om
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <footer>
+            &COPY; 2023. Karla Glazer
+        </footer>
+    </body>
+</html>

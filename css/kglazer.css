@@ -1,0 +1,88 @@
+footer {
+    position: fixed;
+    bottom:0;
+    text-align: center;
+    width:96.5%;
+    background-color: darkcyan;
+    color: white;
+    
+}
+section{
+    padding-bottom: 15px;
+}
+.nekretnine{
+    display: grid;
+    grid-template-columns: 48% 48%;
+    column-gap: 4%;
+}
+.nekretnina{
+    display: grid;
+    grid-template-columns: 25% 75%;
+    padding-top: 5px;
+}
+#navigation > li{
+    display: inline;
+}
+#navigation > li a{
+    padding: 14px 16px;
+    text-decoration: none;
+}
+body{
+    margin-left: 2em;
+    margin-right: 2em;
+}
+.inputGreska{
+    border-color: red;
+}
+.inputIspravno{
+    border-color: green;
+}
+
+#oporavakLozinke{
+    visibility: hidden;
+}
+#oporavakLozinke:target{
+    visibility: visible;
+}
+ul{
+    list-style: none;
+}
+#nova{
+    display: none;
+}
+#uredivanje{
+    display: none;
+}
+.prijava{
+    display:flex;
+    justify-content: center;
+}
+
+.popis{
+    display: flex;
+    justify-content: center;
+}
+.popis > table{
+    width: 70%;
+    border: 2px solid;
+    border-color: darkcyan;
+}
+
+#nedostatak{
+    display: none;
+}
+#nedostatak:target{
+    display: block;
+}
+nav{
+    background-color: darkcyan;
+}
+nav > ul > li >a{
+    color: white;
+}
+h2{
+    color: darkcyan;
+}
+h3{
+    color: darkcyan;
+}

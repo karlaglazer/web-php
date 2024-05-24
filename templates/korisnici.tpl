@@ -1,0 +1,45 @@
+<h2>{$naziv}</h2>
+<section class="popis">
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    Korisničko ime
+                </th>
+                <th>
+                    Prezime
+                </th>
+                <th>
+                    Ime
+                </th>
+                <th>
+                    Email
+                </th>
+                <th>
+                    Lozinka
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {foreach from=$popisKorisnika item=korisnik}
+                <tr>
+                    <td>
+                        {$korisnik['korisnicko_ime']}
+                    </td>
+                    <td>
+                        {$korisnik['prezime']}
+                    </td>
+                    <td>
+                        {$korisnik['ime']}
+                    </td>
+                    <td>
+                        {$korisnik['email']}
+                    </td>
+                    <td>
+                        {$korisnik['lozinka']}
+                    </td>
+                </tr>
+            {/foreach}
+        </tbody>
+    </table>
+</section>
