@@ -3,9 +3,9 @@
 class Baza {
 
     const server = "localhost";
-    const korisnik = "WebDiP2022x011";
-    const lozinka = "admin_bDvh";
-    const baza = "WebDiP2022x011";
+    const korisnik = "*";
+    const lozinka = "*";
+    const baza = "*";
 
     private $veza = null;
     private $greska = '';
